@@ -1,0 +1,10 @@
+{
+    "CACHE_HASH_ALGORITHM": "sha1",
+    "JAVA_DOWNLOAD_PREFIX": "http://download.pivotal.io.s3.amazonaws.com/openjdk/lucid/x86_64/",
+    "JAVA_PACKAGE": "openjdk-1.7.0_40.tar.gz", 
+    "JAVA_PACKAGE_HASH": "227e1258057e93c0eca8064e0667720854e3cbd4",
+    "TOMCAT_DOWNLOAD_PREFIX": "http://apache.cs.utah.edu/tomcat/tomcat-8/v8.0.0-RC3/bin/",
+    "TOMCAT_PACKAGE": "apache-tomcat-8.0.0-RC3.tar.gz",
+    "TOMCAT_PACKAGE_HASH": "a6a7df2358851c50bcfe1e5ddf0f42a13de2756a",
+    "TOMCAT_STRIP": true
+}
