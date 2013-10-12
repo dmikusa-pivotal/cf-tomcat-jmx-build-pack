@@ -25,6 +25,7 @@ def memory_limit_to_int_mb(mem_limit_str):
 
 
 def configure_catalina_opts(ctx):
+    import os
     if 'CATALINA_OPTS' in os.environ.keys():
         ctx['CATALINA_OPTS'] = os.environ['CATALINA_OPTS']
     if 'CATALINA_OPTS' not in ctx.keys():
@@ -67,7 +68,7 @@ if __name__ == '__main__':
             .done()
         .run()
             .command('mv * ROOT/')
-            out_of('BUILD_DIR')
+            .out_of('BUILD_DIR')
             .done()
         .install()
             .package('JAVA')
@@ -79,7 +80,7 @@ if __name__ == '__main__':
                 .to('tomcat/conf')
                 .done()
             .done()
-        .run().
+        .run()
             .command('mv ROOT tomcat/webapps')
             .out_of('BUILD_DIR')
             .done()
