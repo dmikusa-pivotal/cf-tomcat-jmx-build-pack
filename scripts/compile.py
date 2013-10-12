@@ -38,11 +38,12 @@ def configure_catalina_opts(ctx):
             '-Xss256k',
             '-XX:MaxPermSize=%d%s' % (perm, 'm')))
     if ctx['CATALINA_OPTS'].find('-Djava.io.tempdir') == -1:
-        ctx['CATALINA_OPTS'] += '-Djava.io.tempdir=$TMPDIR'
+        ctx['CATALINA_OPTS'] += ' -Djava.io.tempdir=$TMPDIR'
     if ctx['CATALINA_OPTS'].find('-Dlogs.dir') == -1:
-        ctx['CATALINA_OPTS'] += '-Dlogs.dir=`dirname $HOME`/logs'
+        ctx['CATALINA_OPTS'] += ' -Dlogs.dir=`dirname $HOME`/logs'
     if ctx['CATALINA_OPTS'].find('-Dhttp.port') == -1:
-        ctx['CATALINA_OPTS'] += '-Dhttp.port=$VCAP_APP_PORT'
+        ctx['CATALINA_OPTS'] += ' -Dhttp.port=$VCAP_APP_PORT'
+    ctx['CATALINA_OPTS'] = '"%s"' % ctx['CATALINA_OPTS']
 
 
 def log_run(cmd, retcode, stdout, stderr):
@@ -78,12 +79,10 @@ if __name__ == '__main__':
         .run()
             .command('mkdir tomcat/webapps')
             .out_of('BUILD_DIR')
-            .on_finish(log_run)
             .done()
         .run()
             .command('mv ROOT/ tomcat/webapps/')
             .out_of('BUILD_DIR')
-            .on_finish(log_run)
             .done()
         .execute()
             .method(configure_catalina_opts)
