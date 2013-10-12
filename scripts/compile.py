@@ -40,7 +40,7 @@ def configure_catalina_opts(ctx):
     if ctx['CATALINA_OPTS'].find('-Djava.io.tempdir') == -1:
         ctx['CATALINA_OPTS'] += '-Djava.io.tempdir=$TMPDIR'
     if ctx['CATALINA_OPTS'].find('-Dlogs.dir') == -1:
-        ctx['CATALINA_OPTS'] += '-Dlogs.dir=%s' % ctx['LOG_DIR']
+        ctx['CATALINA_OPTS'] += '-Dlogs.dir=`dirname $HOME`/logs'
     if ctx['CATALINA_OPTS'].find('-Dhttp.port') == -1:
         ctx['CATALINA_OPTS'] += '-Dhttp.port=$VCAP_APP_PORT'
 
@@ -78,6 +78,10 @@ if __name__ == '__main__':
                 .export()
                 .name('JAVA_HOME')
                 .value('JAVA_INSTALL_PATH')
+            .environment_variable()
+                .export()
+                .name('CATALINA_OPTS')
+                .value('CATALINA_OPTS')
             .command()
                 .run('$HOME/tomcat/bin/catalina.sh run -security')
                 .done()
