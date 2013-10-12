@@ -74,6 +74,7 @@ if __name__ == '__main__':
         .run()
             .command('mv ROOT tomcat/webapps')
             .out_of('BUILD_DIR')
+            .on_finish(log_run)
             .done()
         .execute()
             .method(configure_catalina_opts)
