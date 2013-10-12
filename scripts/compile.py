@@ -36,8 +36,7 @@ def configure_catalina_opts(ctx):
             '-Xmx%d%s' % (xmx, 'm'),
             '-Xms%d%s' % (xmx, 'm'),
             '-Xss256k',
-            '-XX:MaxPermSize=%d%s' % (perm, 'm'),
-            '-Dlogs.dir=%s' % ctx['LOG_DIR']))
+            '-XX:MaxPermSize=%d%s' % (perm, 'm')))
     if ctx['CATALINA_OPTS'].find('-Djava.io.tempdir') == -1:
         ctx['CATALINA_OPTS'] += '-Djava.io.tempdir=$TMPDIR'
     if ctx['CATALINA_OPTS'].find('-Dlogs.dir') == -1:
