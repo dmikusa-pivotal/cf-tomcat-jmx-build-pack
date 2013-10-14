@@ -75,7 +75,7 @@ if __name__ == '__main__':
         .run()
             .command('mv * ROOT')
             .out_of('BUILD_DIR')
-            .shell()
+            .with_shell()
             .on_finish(log_run)
             .done()
         .run()
