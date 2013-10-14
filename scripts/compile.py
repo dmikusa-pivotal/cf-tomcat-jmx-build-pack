@@ -46,6 +46,12 @@ def configure_catalina_opts(ctx):
     ctx['CATALINA_OPTS'] = '"%s"' % ctx['CATALINA_OPTS']
 
 
+def configure_security_manager(ctx):
+    use_security_manager = ctx.get('USE_SECURITY_MANAGER', False)
+    if use_security_manager:
+        ctx['SECURITY_MANAGER_OPTS'] = '-security'
+
+
 def log_run(cmd, retcode, stdout, stderr):
     print 'Comand %s completed with [%d]' % (str(cmd), retcode)
     print 'STDOUT:'
@@ -68,11 +74,6 @@ if __name__ == '__main__':
             .under('BUILD_DIR')
             .into('ROOT')
             .done()
-        .run()
-            .command('ls -la')
-            .out_of('BUILD_DIR')
-            .on_finish(log_run)
-            .done()
         .install()
             .package('JAVA')
             .package('TOMCAT')
@@ -94,6 +95,8 @@ if __name__ == '__main__':
             .done()
         .execute()
             .method(configure_catalina_opts)
+        .execute()
+            .method(configure_security_manager)
         .create_start_script()
             .environment_variable()
                 .export()
@@ -103,7 +106,11 @@ if __name__ == '__main__':
                 .export()
                 .name('CATALINA_OPTS')
                 .value('CATALINA_OPTS')
+            .environment_variable()
+                .export()
+                .name('SECURITY_MANAGER_OPTS')
+                .value('SECURITY_MANAGER_OPTS')
             .command()
-                .run('$HOME/tomcat/bin/catalina.sh run -security')
+                .run('$HOME/tomcat/bin/catalina.sh run $SECURITY_MANAGER_OPTS')
                 .done()
             .write())
