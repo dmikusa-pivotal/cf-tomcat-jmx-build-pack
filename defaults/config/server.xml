@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Server port="-1" shutdown="SHUTDOWN">
-  <Listener className="org.apache.catalina.core.JasperListener" />
   <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
   <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
   <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
@@ -19,7 +18,6 @@
 
     <Connector executor="tomcatThreadPool"
                port="${http.port}" 
-               protocol="org.apache.coyote.http11.Http11NioProtocol"
                connectionTimeout="20000"
                redirectPort="8443" />
 
