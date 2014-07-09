@@ -50,6 +50,8 @@ def configure_security_manager(ctx):
     use_security_manager = ctx.get('USE_SECURITY_MANAGER', False)
     if use_security_manager:
         ctx['SECURITY_MANAGER_OPTS'] = '-security'
+    else:
+        ctx['SECURITY_MANAGER_OPTS'] = ''
 
 
 def log_run(cmd, retcode, stdout, stderr):
