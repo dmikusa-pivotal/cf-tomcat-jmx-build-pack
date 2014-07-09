@@ -3,9 +3,9 @@
     "JAVA_DOWNLOAD_PREFIX": "http://download.run.pivotal.io/openjdk/lucid/x86_64/",
     "JAVA_PACKAGE": "openjdk-1.7.0_55.tar.gz", 
     "JAVA_PACKAGE_HASH": "227e1258057e93c0eca8064e0667720854e3cbd4",
-    "TOMCAT_DOWNLOAD_PREFIX": "http://apache.cs.utah.edu/tomcat/tomcat-8/v8.0.8/bin",
-    "TOMCAT_PACKAGE": "apache-tomcat-8.0.8.tar.gz",
+    "TOMCAT_DOWNLOAD_PREFIX": "http://apache.cs.utah.edu/tomcat/tomcat-8/v8.0.9/bin",
+    "TOMCAT_PACKAGE": "apache-tomcat-8.0.9.tar.gz",
     "TOMCAT_PACKAGE_HASH": "4cca8a0a296f76d45d0b807a03ad956e6bb8a02b",
     "TOMCAT_STRIP": true,
-    "USE_SECURITY_MANAGER": true
+    "USE_SECURITY_MANAGER": false
 }
