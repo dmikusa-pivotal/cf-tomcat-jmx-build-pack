@@ -5,7 +5,7 @@
     "JAVA_PACKAGE_HASH": "227e1258057e93c0eca8064e0667720854e3cbd4",
     "TOMCAT_DOWNLOAD_PREFIX": "https://dl.dropboxusercontent.com/u/186123235/binaries/temp/",
     "TOMCAT_PACKAGE": "apache-tomcat-8.0.9.tar.gz",
-    "TOMCAT_PACKAGE_HASH": "c9781d2155b7f1d4f1347c687d75128e4dd85e2a",
+    "TOMCAT_PACKAGE_HASH": "5accdf00b5d3b0a2c188b1da7cbdf68a971d023b",
     "TOMCAT_STRIP": true,
     "USE_SECURITY_MANAGER": false
 }
