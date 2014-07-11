@@ -2,7 +2,7 @@
     "CACHE_HASH_ALGORITHM": "sha1",
     "JAVA_DOWNLOAD_PREFIX": "http://download.run.pivotal.io/openjdk/lucid/x86_64/",
     "JAVA_PACKAGE": "openjdk-1.7.0_55.tar.gz", 
-    "JAVA_PACKAGE_HASH": "227e1258057e93c0eca8064e0667720854e3cbd4",
+    "JAVA_PACKAGE_HASH": "0788b91b35bfdc628143103b17de3194c39a305a",
     "TOMCAT_DOWNLOAD_PREFIX": "https://dl.dropboxusercontent.com/u/186123235/binaries/temp/",
     "TOMCAT_PACKAGE": "apache-tomcat-8.0.9.tar.gz",
     "TOMCAT_PACKAGE_HASH": "5accdf00b5d3b0a2c188b1da7cbdf68a971d023b",
